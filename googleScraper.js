@@ -46,5 +46,7 @@ async function autoScroll(page) {
         const oneLevel = await page.$$eval('.islir img', as => as.map(a => a.src));
         console.log(oneLevel);
     }
+    await page.close()
+    await browser.close()
 })()
 
