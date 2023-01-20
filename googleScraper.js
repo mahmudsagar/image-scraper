@@ -32,7 +32,7 @@ async function autoScroll(page) {
     await page.waitForNavigation()
     // await page.waitForSelector('.MSM1fd');
     await page.waitForSelector('.bRMDJf img');
-    // await autoScroll(page);
+    await autoScroll(page);
     
     const options = await page.$$eval('.bRMDJf img', as => as.map(a => a.src));
     
@@ -44,7 +44,7 @@ async function autoScroll(page) {
         await el.click()
         await page.waitForSelector('.bRMDJf img');
         const oneLevel = await page.$$eval('.islir img', as => as.map(a => a.src));
-        console.log(oneLevel);
+        console.log(JSON.stringify(oneLevel));
     }
     await page.close()
     await browser.close()
